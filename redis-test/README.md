@@ -21,7 +21,7 @@ redis-cli
 Run web server:
 
 ```bash
-node server.js
+npm start
 ```
 
 Now your Redis database and the web server are ready. By using Postman you can send GET requests to:
