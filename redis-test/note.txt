@@ -1,0 +1,68 @@
+Redis is a key-value store "nosql database". Redis doesn't have any table, document structure. 
+Redis works on RAM and because of that it is super fast. You have to use normal databases 
+to store informations but Redis is for to store the informations which
+hard to get, or has to be calculated every time. Redis is on top of the traditional database.
+What you store in redis is string by default.
+
+$ redis-server => start redis server
+
+$ redis-cli => access redis and run commands
+
+$ quit => quit from cli
+
+$ SET <key> <value> => set new key-value pair
+
+$ GET <key> => get the value in that key
+    (nil) => means there is not any key
+
+$ DEL <key> => delete the key-value pair
+    0 => there is not any key like this
+    1 => deleted successfully
+
+$ EXISTS <key> => show if this key exist or not
+    0 => there is not any key like this
+    1 => this key exists
+
+$ KEYS * => get all the keys
+
+$ FLUSHALL => delete all key-value pairs
+
+$ TTL <key> => time to leave, shows the expiration time
+    -1 => there is not any expiration date for this key
+    -2 => there is not any key like this
+
+$ EXPIRE <key> <seconds> => set new expiration date to the key
+    0 => there is not any key like this
+    1 => successfully set
+
+$ SETEX <key> <seconds> <value> => set expiration date on set level
+
+$ LPUSH <array-name> <value value value ...> => create an array, and left push(push to the beginning)
+$ RPUSH ... => right push, push to the end
+    <1> => returns the number of elements in the array
+
+$ LPOP <array-name> => pop out the first value and delete it
+$ RPOP ... => pop out the latest one in the array
+
+$ LRANGE <array-name> <start-index> <stop-index> => get all values in the array, 0 -1 for all values
+
+$ SADD <set-name> <value value value ...> => create a set and add values in it, in set, values have to be unique
+    0 => value already exists
+    <number> => how many values successfully added
+
+$ SMEMBERS <set-name> => show the elements in the set
+
+$ SREM <set-name> <value value value ...> => remove the values from set
+    <number> => how many values successfully deleted
+
+$ HSET <hash-name> <<key> <value> <key> <value> ... > => create a hash and store new key-value pair
+
+$ HGET <hash-name> <key> => get the value of this key inside this hash
+
+$ HGETALL <hash-name> => get all the key value pair inside this hash (key-first, value-second)
+
+$ HDEL <hash-name> <key-name> => delete the key-value pair in the hash
+
+$ HEXISTS <hash-name> <key> => shows if this key EXISTS
+    0 => doesnt exist
+    1 => exists
